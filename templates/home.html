@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBanking Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #000000, #281dc1); /* Golden gradient background */
+            color: #fff;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .container {
+            flex-grow: 1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .home-background {
+            background: linear-gradient(135deg, #c1c1c1, #ff9e0d); /* Golden gradient background */
+            color: #333;
+        }
+
+        .welcome-section {
+            margin-bottom: 50px;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background-color: rgb(219 60 60 / 14%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .service-link {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-link:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        /* Positioning the logo in the top-left corner */
+.logo-container {
+    position: absolute;
+    top: 40px;
+    left: 25px;
+}
+
+.logo {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 50%;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-container">
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>        
+        <h1>SmartBanking</h1>
+        <p>Your trusted partner for modern financial solutions</p>
+    </div>
+
+    <div class="container home-background">
+        <div class="welcome-section">
+            <h2>Welcome to SmartBanking</h2>
+            <p class="subtitle">Empowering your financial decisions with advanced machine learning technology.</p>
+        </div>
+
+        <!-- Service Section -->
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Churn Prediction</h3>
+                <p>Predict customer retention with our advanced ML model</p>
+                <a href="/churn" class="service-link">Try Churn Analysis</a>
+            </div>
+                
+            <div class="service-card">
+                <h3>Loan Prediction</h3>
+                <p>Check loan approval probability instantly</p>
+                <a href="/loan" class="service-link">Check Loan Status</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Customer Clustering</h3>
+                <p>Identify customer segments for targeted strategies</p>
+                <a href="/cluster" class="service-link">Explore Clustering</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="creator">Created by Pronay Bhoumick</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/probho_19/?hl=en" target="_blank" class="social-link">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/pronay-bhoumick-05901b292/" target="_blank" class="social-link">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/bluepronay" target="_blank" class="social-link">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+            </a>
+            <a href="mailto:pronay910135bhoumick@gmail.com" target="_blank" class="social-link">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

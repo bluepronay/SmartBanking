@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .churn-background {
+            background: linear-gradient(23deg, #f6f6f6, #84b2ff) /* Gradient background */
+        }
+
+        .result-container {
+            flex-grow: 1; /* Ensures the content takes up the remaining space */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .result-box {
+            background-color: rgba(0, 0, 0, 0.1);;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(46, 42, 42, 0.1); /* Soft shadow to create depth */
+            margin-bottom: 30px;
+            max-width: 600px; /* Limiting width to avoid stretching too much on large screens */
+            margin-left: auto;
+            margin-right: auto; /* Center the box */
+            transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+        }
+
+        .result-box:hover {
+            transform: translateY(-5px); /* Slight lift on hover for interactive feel */
+        }
+
+        .prediction-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .result-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn-home {
+            background-color: #f44336;
+        }
+
+        .btn-home:hover {
+            background-color: #e41f23;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+            left: 0;
+            margin-top: auto;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2); /* Slight zoom effect on hover */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px;
+            }
+            .social-icons img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body class="churn-background">
+
+    <div class="result-container">
+        <h2 class="result-title">Churn Prediction Result</h2>
+        
+        <!-- Prediction Result Section -->
+        <div class="result-box">
+            <p><b>The prediction is:</b></p>
+            <strong class="prediction-value">The Customer {{ prediction }}</strong>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="result-buttons">
+            <a href="{{ url_for('churn') }}" class="btn">Try Again</a>
+            <a href="{{ url_for('home') }}" class="btn btn-home">Return to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Pronay Bhoumick</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/probho_19/?hl=en" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/pronay-bhoumick-05901b292/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/bluepronay" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+            <a href="mailto:pronay910135bhoumick@gmail.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .cluster-background {
+            background: linear-gradient(135deg, #7dd8b9, #91a9d0); /* Gradient background */
+        }
+
+        .result-container {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .result-box {
+            background-color: rgb(74 208 224 / 36%);;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cluster-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .cluster-description {
+            background-color: rgb(74 208 224 / 15%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn-home {
+            background-color: #f44336;
+        }
+
+        .btn-home:hover {
+            background-color: #e41f23;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .btn {
+                padding: 8px 16px;
+            }
+            .social-icons img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body class="cluster-background">
+
+    <div class="result-container">
+        <h2 class="result-title">Clustering Result</h2>
+        
+        <!-- Cluster Result Section -->
+        <div class="result-box">
+            <p><b>The customer belongs to cluster number:</b></p>
+            <strong class="cluster-number">{{ cluster_number }}</strong>
+        </div>
+
+        <!-- Cluster Description Section -->
+        <div class="cluster-description">
+            <h4><b>Cluster Description</b></h4>
+            <p>
+                {% if cluster_number == 0 %}
+                    Group 0: This is performing best among all the clusters, maintaining the highest monthly average purchases. Offering reward points could increase their purchases.
+                {% elif cluster_number == 1 %}
+                    Group 1: This group makes maximum one-off payments (likely bills). Offering discounts on next transactions upon full payment could be beneficial.
+                {% elif cluster_number == 2 %}
+                    Group 2: These customers are potential targets, with good credit scores and bill payments. Increasing the credit limit or lowering interest rates could be a good strategy.
+                {% else %}
+                    Group 3: These customers are taking maximum cash advances. Reminders for payments and offers on early payments could improve their payment rate.
+                {% endif %}
+            </p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="result-buttons">
+            <a href="{{ url_for('cluster') }}" class="btn">Try Again</a>
+            <a href="{{ url_for('home') }}" class="btn btn-home">Return to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p><b>Created by Pronay Bhoumick</b></p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/probho_19/?hl=en" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/pronay-bhoumick-05901b292/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/bluepronay" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+            <a href="mailto:pronay910135bhoumick@gmail.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

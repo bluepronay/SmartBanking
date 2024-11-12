@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Inline CSS for Styling Loan Page */
+        body.loan-background {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #856506, #ffef13);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        header h1, header h2 {
+            margin: 0;
+            padding: 5px;
+        }
+        .container.form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #FFBF00;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            background-color: #100926;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 15px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="loan-background">
+    <header>
+        <h1>SmartBanking</h1>
+        <h2>Loan Prediction</h2>
+    </header>
+    
+    <div class="container form-container">
+        <form method="POST">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="married">Married:</label>
+            <select id="married" name="married">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="dependents">Number of Dependents:</label>
+            <input type="number" id="dependents" name="dependents" placeholder="Enter No. of Dependents" required>
+
+            <label for="education">Education:</label>
+            <select id="education" name="education">
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+            </select>
+
+            <label for="self_employed">Self Employed:</label>
+            <select id="self_employed" name="self_employed">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="applicant_income">Applicant Income:</label>
+            <input type="number" id="applicant_income" name="applicant_income" placeholder="Enter Applicant Income" required>
+
+            <label for="coapplicant_income">Coapplicant Income:</label>
+            <input type="number" id="coapplicant_income" name="coapplicant_income" placeholder="Enter Coapplicant Income" required>
+
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" id="loan_amount" name="loan_amount" placeholder="Enter Loan Amount" required>
+
+            <label for="loan_amount_term">Loan Amount Term:</label>
+            <input type="number" id="loan_amount_term" name="loan_amount_term" placeholder="Term in Months" required>
+
+            <label for="credit_history">Credit History:</label>
+            <input type="number" step="0.1" id="credit_history" name="credit_history" placeholder="past borrowing and repayment activities 0 or 1" required>
+
+            <label for="property_area">Property Area:</label>
+            <select id="property_area" name="property_area">
+                <option value="Urban">Urban</option>
+                <option value="Semiurban">Semiurban</option>
+                <option value="Rural">Rural</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Created by Pronay Bhoumick</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/probho_19/?hl=en" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/pronay-bhoumick-05901b292/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/bluepronay" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+            <a href="mailto:pronay910135bhoumick@gmail.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email"></a>
+        </div>
+    </footer>
+</body>
+</html>
