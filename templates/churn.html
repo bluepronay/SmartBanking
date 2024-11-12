@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Inline CSS for Centering and Styling */
+        body.churn-background {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(336deg, #554097, #4ffeea);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        .header h1, .header h2 {
+            margin: 0;
+            padding: 5px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .churn-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-group label {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+        }
+        .submit-btn {
+            padding: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #4facfe;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            background-color: #100926;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="churn-background">
+    <!-- Header Section -->
+    <header class="header">
+        <h1>SmartBanking</h1>
+        <h2>Churn Prediction</h2>
+    </header>
+    
+    <!-- Form Container -->
+    <div class="container">
+        <form method="POST" class="churn-form">
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Spain">Spain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="credit_score">Credit Score:</label>
+                <input type="number" id="credit_score" name="credit_score" placeholder="Enter credit score (300-850)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Age in years" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenure">Tenure:</label>
+                <input type="number" id="tenure" name="tenure" placeholder="Enter years with bank" required>
+            </div>
+
+            <div class="form-group">
+                <label for="balance">Balance:</label>
+                <input type="number" id="balance" name="balance" placeholder="Account Balance in USD" required>
+            </div>
+
+            <div class="form-group">
+                <label for="num_products">Number of Products:</label>
+                <input type="number" id="num_products" name="num_products" placeholder="No. of products held" required>
+            </div>
+
+            <div class="form-group">
+                <label for="has_credit_card">Has Credit Card:</label>
+                <select id="has_credit_card" name="has_credit_card">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="is_active_member">Is Active Member:</label>
+                <select id="is_active_member" name="is_active_member">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="estimated_salary">Estimated Salary:</label>
+                <input type="number" id="estimated_salary" name="estimated_salary" placeholder="Estimated Salary in USD" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Created by Pronay Bhoumick</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/probho_19/?hl=en" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/pronay-bhoumick-05901b292/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/bluepronay" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+            <a href="mailto:pronay910135bhoumick@gmail.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png" alt="Email"></a>
+        </div>
+    </footer>
+</body>
+</html>

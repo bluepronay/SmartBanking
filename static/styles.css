@@ -1,0 +1,77 @@
+/* Background styles for each page */
+.home-background {
+    background: linear-gradient(to right, #b4f8c8, #8fd9a8);
+}
+
+.churn-background {
+    background: linear-gradient(to right, #a2d9ff, #3f87a6);
+}
+
+.loan-background {
+    background: linear-gradient(to right, #f7e7b2, #f5c771);
+}
+
+/* New greenish background style for cluster page */
+.cluster-background {
+    background: linear-gradient(to right, #a8e6cf, #56ab91);
+}
+
+/* Container alignment and styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;  /* Ensures full width of the form */
+}
+
+button {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #f5c771;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f2b544;
+}
+
+/* Footer and social icon styles */
+footer {
+    margin-top: 20px;
+    color: #333;
+}
+
+.social-icons img {
+    width: 25px;
+    margin: 0 10px;
+}
