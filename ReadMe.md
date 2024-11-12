@@ -54,3 +54,5 @@ To get started with **SmartBanking**, follow these steps:
 1. Clone this repository:
    ```bash
    git clone https://github.com/bluepronay/SmartBanking.git
+
+Thanks for Visiting!!
